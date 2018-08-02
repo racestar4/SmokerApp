@@ -8,7 +8,7 @@ public class StatisticsActivity extends AppCompatActivity {
     class Connection {
 
         public Connection(){
-            
+
         }
     }
 }
