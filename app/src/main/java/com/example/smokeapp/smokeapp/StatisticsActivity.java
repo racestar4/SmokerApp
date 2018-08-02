@@ -5,4 +5,10 @@ import android.os.Bundle;
 
 public class StatisticsActivity extends AppCompatActivity {
 
+    class Connection {
+
+        public Connection(){
+            
+        }
+    }
 }
