@@ -46,7 +46,9 @@
             android:textColor="@android:color/holo_purple"
             android:textColorHighlight="@android:color/holo_red_light"
             android:textColorHint="@android:color/holo_red_light"
-            android:textColorLink="@color/colorPrimary" />
+            android:textColorLink="@color/colorPrimary"
+            />
+
 
         <Button
             android:id="@+id/config"
