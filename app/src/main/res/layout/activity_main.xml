@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="84dp"
             android:background="@android:color/holo_red_light"
-            android:text="Statistiken"
+            android:text="@string/statistic"
             android:textColor="@android:color/holo_purple"
             android:textColorHighlight="@android:color/holo_red_light"
             android:textColorHint="@android:color/holo_red_light"
@@ -60,6 +60,6 @@
             android:id="@+id/info"
             android:layout_width="match_parent"
             android:layout_height="96dp"
-            android:text="Information" />
+            android:text="@string/info" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
