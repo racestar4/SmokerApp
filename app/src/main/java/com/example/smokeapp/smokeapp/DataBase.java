@@ -45,6 +45,7 @@ public class DataBase extends AsyncTask<String, Void, String> {
          * @throws IOException
          */
         private void openConnection() throws IOException{
+            System.out.println("");
             //StringBuffer für das zusammensetzen der URL
             StringBuffer dataBuffer = new StringBuffer();
             dataBuffer.append(URLEncoder.encode("authkey", "UTF-8"));
