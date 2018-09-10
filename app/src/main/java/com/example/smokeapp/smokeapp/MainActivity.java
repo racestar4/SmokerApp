@@ -13,6 +13,8 @@ import android.widget.PopupMenu;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
 public class  MainActivity extends AppCompatActivity {
 
     @Override
@@ -23,7 +25,12 @@ public class  MainActivity extends AppCompatActivity {
         User user = new User();
         Button config = (Button) findViewById(R.id.config);
         Button statistics = (Button) findViewById(R.id.statistic);
-
+        DataBaseConnection dataBaseConnection = new DataBaseConnection();
+        try {
+            JSONObject jsonObject = new JSONObject(dataBaseConnection.doInBackground("userInformation", "bob"));
+        }catch (Exception e){
+            System.out.println(e.toString());
+        }
         config.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,6 +46,7 @@ public class  MainActivity extends AppCompatActivity {
         });
     }
     public void saveSettings(View view){
+        Toast.makeText(this, "Button1 Clicked!", Toast.LENGTH_SHORT).show();
         Toast.makeText(this, "Button1 Clicked!", Toast.LENGTH_SHORT).show();
 
 
