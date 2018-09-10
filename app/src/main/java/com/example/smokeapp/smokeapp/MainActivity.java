@@ -26,8 +26,9 @@ public class  MainActivity extends AppCompatActivity {
         Button config = (Button) findViewById(R.id.config);
         Button statistics = (Button) findViewById(R.id.statistic);
         DataBaseConnection dataBaseConnection = new DataBaseConnection();
+        JSONObject jsonObject;
         try {
-            JSONObject jsonObject = new JSONObject(dataBaseConnection.doInBackground("userInformation", "bob"));
+            jsonObject = new JSONObject(dataBaseConnection.doInBackground("userInformation", "bob"));
         }catch (Exception e){
             System.out.println(e.toString());
         }
@@ -42,12 +43,13 @@ public class  MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 setContentView(R.layout.activity_statistics);
+                Toast.makeText(this, jsonObject.toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }
     public void saveSettings(View view){
         Toast.makeText(this, "Button1 Clicked!", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Button1 Clicked!", Toast.LENGTH_SHORT).show();
+
 
 
         setContentView(R.layout.activity_main);
