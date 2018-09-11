@@ -47,6 +47,7 @@
             android:textColorHighlight="@android:color/holo_red_light"
             android:textColorHint="@android:color/holo_red_light"
             android:textColorLink="@color/colorPrimary"
+            android:onClick="statistics"
             />
 
 
@@ -54,7 +55,9 @@
             android:id="@+id/config"
             android:layout_width="match_parent"
             android:layout_height="89dp"
-            android:text="@string/conifg" />
+            android:text="@string/conifg"
+            android:onClick="config"
+            />
 
         <Button
             android:id="@+id/info"
