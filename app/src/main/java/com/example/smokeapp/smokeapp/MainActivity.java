@@ -33,7 +33,7 @@ public class  MainActivity extends AppCompatActivity {
         try {
             jsonObject = new JSONObject(dataBaseConnection.doInBackground("userInformation", "bob"));
         } catch (Exception e) {
-            System.out.println(e.toString());
+           // System.out.println(e.toString());
         }
     }
 
@@ -41,12 +41,16 @@ public class  MainActivity extends AppCompatActivity {
     public void statistics (View view){
 
         setContentView(R.layout.activity_statistics);
-        Toast.makeText(this, jsonObject.toString(), Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(this, jsonObject.toString(), Toast.LENGTH_SHORT).show();
     }
     //On Click config
      public void config (View view) {
         setContentView(R.layout.activity_config);
      }
+
+        public void smoked(View view){
+        Toast.makeText(this,"Du raucher", Toast.LENGTH_SHORT).show();
+        }
 
         // On Click save user settings
         public void saveSettings (View view){
