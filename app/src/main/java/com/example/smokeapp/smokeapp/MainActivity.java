@@ -41,9 +41,13 @@ public class  MainActivity extends AppCompatActivity {
 
     // On Click statistics
     public void statistics (View view){
-
         setContentView(R.layout.activity_statistics);
      //   Toast.makeText(this, jsonObject.toString(), Toast.LENGTH_SHORT).show();
+    }
+    //On Click info
+
+    public void info(View view){
+        setContentView(R.layout.activity_info);
     }
     //On Click config
      public void config (View view) {

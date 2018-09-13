@@ -64,6 +64,8 @@
             android:id="@+id/info"
             android:layout_width="match_parent"
             android:layout_height="96dp"
-            android:text="@string/info" />
+            android:text="@string/info"
+            android:onClick="info"
+            />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
