@@ -3,6 +3,7 @@ package com.example.smokeapp.smokeapp;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,14 +56,17 @@ public class  MainActivity extends AppCompatActivity {
         // On Click save user settings
         public void saveSettings (View view){
 
-            TextView tv1 =  findViewById(R.id.InputName);
-            TextView tv2 =  findViewById(R.id.InputSize);
+            EditText tv1 =  findViewById(R.id.InputName);
+            EditText tv2 =  findViewById(R.id.InputSize);
 
             if ( !tv1.getText().toString().equals("")) {
                 user.name = tv1.getText().toString();
+                tv1.setText(user.name);
             }
             if( !tv2.getText().toString().equals("")) {
+
                 user.height = Integer.parseInt(tv2.getText().toString());
+              //  tv2.setText(user.height);
             }
             Toast.makeText(this, "Name ist : " + user.name+ " und bin " + user.height + " groß.", Toast.LENGTH_SHORT).show();
             setContentView(R.layout.activity_main);
