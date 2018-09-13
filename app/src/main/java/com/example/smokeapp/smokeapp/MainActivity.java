@@ -23,7 +23,8 @@ public class  MainActivity extends AppCompatActivity {
      //   Button statistics =findViewById(R.id.statistic);
 
         dataBaseConnection = new DataBaseConnection();
-
+// wenn user existiert auf main seite, wenn kein user existiert auf config seite.
+// ( Eindeutige unterscheidung nötig, Multiple User
         if ( user == null) {
             user = new User();
             setContentView(R.layout.activity_config);
