@@ -16,7 +16,6 @@ public class  MainActivity extends AppCompatActivity {
 
     User user;
     JSONObject jsonObject;
-    DataBaseConnection dataBaseConnection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,20 +25,20 @@ public class  MainActivity extends AppCompatActivity {
      //   Button statistics =findViewById(R.id.statistic);
 
 
-        dataBaseConnection = new DataBaseConnection();
-// wenn user existiert auf main seite, wenn kein user existiert auf config seite.
-// ( Eindeutige unterscheidung nötig, Multiple User
+
+    // wenn user existiert auf main seite, wenn kein user existiert auf config seite.
+    // ( Eindeutige unterscheidung nötig, Multiple User
         if ( user == null) {
             user = new User();
             setContentView(R.layout.activity_config);
         }else {
             setContentView(R.layout.activity_main);
         }
-        new DataBaseConnection().execute("userInformation", "bob");
-    }
+        //new DataBaseConnection().execute("userInformation", "bob");
+
 
         try {
-            jsonObject = new JSONObject(dataBaseConnection.doInBackground("userInformation", "bob"));
+    //        jsonObject = new JSONObject(dataBaseConnection.doInBackground("userInformation", "bob"));
         } catch (Exception e) {
            // System.out.println(e.toString());
         }
@@ -84,7 +83,5 @@ public class  MainActivity extends AppCompatActivity {
             setContentView(R.layout.activity_main);
         }
 
-    public void setResult(String result) {
-        this.result = result;
     }
-}
+

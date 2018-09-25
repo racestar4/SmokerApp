@@ -86,7 +86,7 @@ public class DataBaseConnection extends AsyncTask<String, Void, String> {
     protected void onPostExecute(String result) {
         System.out.println("RESULT: "+result);
         if(!isBlank(result)) {
-            MainActivity.result = result;
+            //MainActivity.result = result;
 
         }
     }
