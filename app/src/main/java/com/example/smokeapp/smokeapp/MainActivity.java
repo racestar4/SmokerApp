@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONObject;
@@ -15,6 +14,7 @@ public class  MainActivity extends AppCompatActivity {
     JSONObject jsonObject;
     static String result;
 
+    boolean loggedIn = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,21 +46,34 @@ public class  MainActivity extends AppCompatActivity {
      public void config (View view) {
         setContentView(R.layout.activity_config);
      }
-     public void back ( View view ){
+     /*public void back ( View view ){
         setContentView(R.layout.activity_main);
      }
+     */
 
      public void switchReg( View view ){
         setContentView(R.layout.activity_reg);
      }
 
+        @Override
+        public void onBackPressed() {
+            if (loggedIn) {
+                setContentView(R.layout.activity_main);
+            } else {
+                setContentView(R.layout.activity_config);
+            }
+        }
         public void smoked(View view){
         Toast.makeText(this,"Du raucher", Toast.LENGTH_SHORT).show();
         }
 
+        public void switchLog(View view){
+        setContentView(R.layout.activity_config);
+        }
+
 
         // On Click save user settings
-        public void saveSettings (View view){
+        public void registerUser (View view){
 
             EditText tv1 =  findViewById(R.id.InputName);
             EditText tv2 =  findViewById(R.id.InputPin);
@@ -84,15 +97,15 @@ public class  MainActivity extends AppCompatActivity {
             if ( !tv5.getText().toString().equals("")) {
                 user.weight = Integer.parseInt(tv5.getText().toString());
             }
-            //Toast.makeText(this, "Name ist : " + user.name  , Toast.LENGTH_SHORT).show();
 
             try {
                 JSONObject json = new JSONObject();
                 json.put("user", user);
             }catch(Exception e){
-
+                e.printStackTrace();
             }
             new DataBaseConnection().execute("saveUserInformation", jsonObject.toString());
+            loggedIn = true;
             setContentView(R.layout.activity_main);
         }
 }

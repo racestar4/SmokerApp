@@ -70,6 +70,7 @@
             android:layout_marginBottom="4px"
             android:layout_marginTop="4px"
             android:background="@color/DarkViolet"
+            android:textSize="20dp"
             android:text=""
             android:inputType="numberPassword"
             />
