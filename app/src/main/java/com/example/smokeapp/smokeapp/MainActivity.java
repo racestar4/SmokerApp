@@ -32,8 +32,9 @@ public class  MainActivity extends AppCompatActivity {
             setContentView(R.layout.activity_config);
         }else {
             setContentView(R.layout.activity_main);
+            //new DataBaseConnection().execute("userInformation", user.name);
         }
-        new DataBaseConnection().execute("userInformation", "bob");
+
     }
 
     // On Click statistics
