@@ -6,6 +6,6 @@ public class User {
 
     String name;
     Date birth;
-    int height;
-    int weight;
+    int pin;
+
 }

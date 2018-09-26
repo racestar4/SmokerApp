@@ -1,12 +1,15 @@
 <resources>
     <string name="app_name">SmokeApp</string>
-    <string name ="conifg">Einstellungen</string>
-    <string name ="statistic">Statistiken</string>
-    <string name ="info">Informationen</string>
+    <string name="conifg">Einstellungen</string>
+    <string name="statistic">Statistiken</string>
+    <string name="info">Informationen</string>
     <string name="save">Speichern</string>
     <string name="uname">User name</string>
     <string name="age">Alter</string>
     <string name="height">Größe</string>
     <string name="weight">Gewicht</string>
+    <string name="login">Einloggen</string>
+    <string name="Registrieren">Registrieren</string>
+    <string name="JetztRegistireren">forceToReg</string>
 
 </resources>
