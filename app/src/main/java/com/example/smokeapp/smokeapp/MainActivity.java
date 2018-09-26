@@ -53,6 +53,9 @@ public class  MainActivity extends AppCompatActivity {
      public void config (View view) {
         setContentView(R.layout.activity_config);
      }
+     public void back ( View view ){
+        setContentView(R.layout.activity_main);
+     }
 
         public void smoked(View view){
         Toast.makeText(this,"Du raucher", Toast.LENGTH_SHORT).show();
