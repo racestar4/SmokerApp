@@ -1,9 +1,12 @@
 package com.example.smokeapp.smokeapp;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,7 +16,7 @@ public class  MainActivity extends AppCompatActivity {
 
     User user;
     JSONObject jsonObject;
-
+    ListView lView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +31,9 @@ public class  MainActivity extends AppCompatActivity {
         }else {
             setContentView(R.layout.activity_main);
         }
-
+        lView = (ListView) findViewById(R.id.list_viewasd);
+        @SuppressLint("ResourceType") ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, R.array.list_arrayasd);
+        lView.setAdapter(adapter);
     }
 
     // On Click statistics
