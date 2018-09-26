@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import org.json.JSONObject;
+import com.google.gson.*;
 
 public class  MainActivity extends AppCompatActivity {
 
@@ -78,7 +79,7 @@ public class  MainActivity extends AppCompatActivity {
             EditText tv1 =  findViewById(R.id.InputName);
             EditText tv2 =  findViewById(R.id.InputPin);
             EditText tv3 =  findViewById(R.id.InputAge);
-            EditText tv4 =  findViewById(R.id.InputSize);
+            EditText tv4 =  findViewById(R.id.InputHeight);
             EditText tv5 =  findViewById(R.id.InputWeight);
 
 
@@ -98,13 +99,8 @@ public class  MainActivity extends AppCompatActivity {
                 user.weight = Integer.parseInt(tv5.getText().toString());
             }
 
-            try {
-                JSONObject json = new JSONObject();
-                json.put("user", user);
-            }catch(Exception e){
-                e.printStackTrace();
-            }
-            new DataBaseConnection().execute("saveUserInformation", jsonObject.toString());
+            Gson gson = new Gson();
+            new DataBaseConnection().execute("saveUserInformation",gson.toJson(user));
             loggedIn = true;
             setContentView(R.layout.activity_main);
         }
