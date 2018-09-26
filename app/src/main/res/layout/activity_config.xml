@@ -38,33 +38,56 @@
             app:srcCompat="@android:drawable/ic_menu_view"
             tools:padding="5dp" />
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tippe deinen Namen ein :" />
+
         <EditText
             android:id="@+id/InputName"
+            android:tooltipText="Tippe deinen Namen ein"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginBottom="4px"
             android:layout_marginTop="4px"
-            android:background="@color/colorAccent"
+            android:background="@color/DarkViolet"
             android:text=""
             android:inputType="text"
            />
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tippe deinen Pin ein :" />
+
         <EditText
-            android:id="@+id/InputSize"
+            android:id="@+id/InputPin"
+            android:tooltipText="Tippe deinen Pin ein"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginBottom="4px"
             android:layout_marginTop="4px"
-            android:background="@color/colorAccent"
-            android:contextClickable="true"
+            android:background="@color/DarkViolet"
             android:text=""
-            android:inputType="number" />
+            android:inputType="numberPassword"
+            />
 
         <Button
             android:id="@+id/save"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:onClick="saveSettings"
-            android:text="@string/save" />
+            android:text="@string/login" />
+
+        <Button
+            android:id="@+id/switchReg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hier Registrieren"
+            android:onClick="switchReg"
+            />
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

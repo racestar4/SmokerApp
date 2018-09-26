@@ -8,8 +8,8 @@
     <string name="age">Alter</string>
     <string name="height">Größe</string>
     <string name="weight">Gewicht</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Einloggen</string>
+    <string name="Registrieren">Registrieren</string>
+    <string name="JetztRegistireren">forceToReg</string>
 
 </resources>

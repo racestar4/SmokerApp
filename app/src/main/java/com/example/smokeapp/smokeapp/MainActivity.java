@@ -13,18 +13,15 @@ public class  MainActivity extends AppCompatActivity {
 
     User user;
     JSONObject jsonObject;
-    DataBaseConnection dataBaseConnection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-      //  Button config = findViewById(R.id.config);
-     //   Button statistics =findViewById(R.id.statistic);
-
-        dataBaseConnection = new DataBaseConnection();
 // wenn user existiert auf main seite, wenn kein user existiert auf config seite.
 // ( Eindeutige unterscheidung nötig, Multiple User
+
+
         if ( user == null) {
             user = new User();
             setContentView(R.layout.activity_config);
@@ -32,11 +29,6 @@ public class  MainActivity extends AppCompatActivity {
             setContentView(R.layout.activity_main);
         }
 
-        try {
-            jsonObject = new JSONObject(dataBaseConnection.doInBackground("userInformation", "bob"));
-        } catch (Exception e) {
-           // System.out.println(e.toString());
-        }
     }
 
     // On Click statistics
@@ -57,15 +49,20 @@ public class  MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
      }
 
+     public void switchReg( View view ){
+        setContentView(R.layout.activity_reg);
+     }
+
         public void smoked(View view){
         Toast.makeText(this,"Du raucher", Toast.LENGTH_SHORT).show();
         }
+
 
         // On Click save user settings
         public void saveSettings (View view){
 
             EditText tv1 =  findViewById(R.id.InputName);
-            EditText tv2 =  findViewById(R.id.InputSize);
+            EditText tv2 =  findViewById(R.id.InputPin);
 
             if ( !tv1.getText().toString().equals("")) {
                 user.name = tv1.getText().toString();
@@ -73,10 +70,11 @@ public class  MainActivity extends AppCompatActivity {
             }
             if( !tv2.getText().toString().equals("")) {
 
-                user.height = Integer.parseInt(tv2.getText().toString());
+                user.pin = Integer.parseInt(tv2.getText().toString());
               //  tv2.setText(user.height);
             }
-            Toast.makeText(this, "Name ist : " + user.name+ " und bin " + user.height + " groß.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Name ist : " + user.name  , Toast.LENGTH_SHORT).show();
+            new DataBaseConnection();
             setContentView(R.layout.activity_main);
         }
 }
