@@ -13,6 +13,7 @@ public class  MainActivity extends AppCompatActivity {
 
     User user;
     JSONObject jsonObject;
+    static String result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,18 +64,35 @@ public class  MainActivity extends AppCompatActivity {
 
             EditText tv1 =  findViewById(R.id.InputName);
             EditText tv2 =  findViewById(R.id.InputPin);
+            EditText tv3 =  findViewById(R.id.InputAge);
+            EditText tv4 =  findViewById(R.id.InputSize);
+            EditText tv5 =  findViewById(R.id.InputWeight);
+
 
             if ( !tv1.getText().toString().equals("")) {
                 user.name = tv1.getText().toString();
-                tv1.setText(user.name);
             }
             if( !tv2.getText().toString().equals("")) {
-
                 user.pin = Integer.parseInt(tv2.getText().toString());
-              //  tv2.setText(user.height);
             }
-            Toast.makeText(this, "Name ist : " + user.name  , Toast.LENGTH_SHORT).show();
-            new DataBaseConnection();
+            if ( !tv3.getText().toString().equals("")) {
+                user.age = Integer.parseInt(tv3.getText().toString());
+            }
+            if ( !tv4.getText().toString().equals("")) {
+                user.size = Integer.parseInt(tv4.getText().toString());
+            }
+            if ( !tv5.getText().toString().equals("")) {
+                user.weight = Integer.parseInt(tv5.getText().toString());
+            }
+            //Toast.makeText(this, "Name ist : " + user.name  , Toast.LENGTH_SHORT).show();
+
+            try {
+                JSONObject json = new JSONObject();
+                json.put("user", user);
+            }catch(Exception e){
+
+            }
+            new DataBaseConnection().execute("saveUserInformation", jsonObject.toString());
             setContentView(R.layout.activity_main);
         }
 }
