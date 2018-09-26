@@ -25,9 +25,10 @@ public class DataBaseConnection extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String... params) {
         String method = params[0];
-        String username = params[1];
+        String userJson = params[1];
+
         try {
-            openConnection(method,username);
+            openConnection(method,userJson);
             result = readResult();
         } catch (IOException e) {
             e.printStackTrace();
@@ -39,7 +40,7 @@ public class DataBaseConnection extends AsyncTask<String, Void, String> {
      * Öffnet eine Verbindung {@link URLConnection}.
      * @throws IOException
      */
-    private void openConnection(String method, String username) throws IOException{
+    private void openConnection(String method, String userJson) throws IOException{
         //StringBuffer für das zusammensetzen der URL
         StringBuffer dataBuffer = new StringBuffer();
 
@@ -49,9 +50,9 @@ public class DataBaseConnection extends AsyncTask<String, Void, String> {
 
         dataBuffer.append(POST_PARAM_SEPARATOR);
 
-        dataBuffer.append(URLEncoder.encode("username","UTF-8"));
+        dataBuffer.append(URLEncoder.encode("userJson","UTF-8"));
         dataBuffer.append(POST_PARAM_KEYVALUE_SEPARATOR);
-        dataBuffer.append(URLEncoder.encode(username, "UTF-8"));
+        dataBuffer.append(URLEncoder.encode(userJson, "UTF-8"));
 
         //Adresse der PHP Schnittstelle für die Verbindung zur MySQL Datenbank
         URL url = new URL("https://informatik.hs-bremerhaven.de/pkampschoeer/app/reader.php");
@@ -84,9 +85,9 @@ public class DataBaseConnection extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String result) {
-        System.out.println("RESULT: "+result);
         if(!isBlank(result)) {
-            //MainActivity.result = result;
+            MainActivity.result = result;
+            System.out.println("RESULT: "+result);
 
         }
     }

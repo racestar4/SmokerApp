@@ -38,7 +38,7 @@ tools:context=".MainActivity">
             <EditText
                 android:id="@+id/InputName"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="60dp"
                 android:layout_marginBottom="4px"
                 android:layout_marginTop="4px"
                 android:background="@color/DarkViolet"
@@ -54,7 +54,7 @@ tools:context=".MainActivity">
             <EditText
                 android:id="@+id/InputPin"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="60dp"
                 android:layout_marginBottom="4px"
                 android:layout_marginTop="4px"
                 android:background="@color/DarkViolet"
@@ -71,7 +71,7 @@ tools:context=".MainActivity">
             <EditText
                 android:id="@+id/InputAge"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="60dp"
                 android:layout_marginBottom="4px"
                 android:layout_marginTop="4px"
                 android:background="@color/DarkViolet"
@@ -88,7 +88,7 @@ tools:context=".MainActivity">
             <EditText
                 android:id="@+id/InputHeight"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="60dp"
                 android:layout_marginBottom="4px"
                 android:layout_marginTop="4px"
                 android:background="@color/DarkViolet"
@@ -105,7 +105,7 @@ tools:context=".MainActivity">
             <EditText
                 android:id="@+id/InputWeight"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="60dp"
                 android:layout_marginBottom="4px"
                 android:layout_marginTop="4px"
                 android:background="@color/DarkViolet"
@@ -116,9 +116,15 @@ tools:context=".MainActivity">
             <Button
                 android:id="@+id/reg"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:onClick="saveSettings"
+                android:layout_height="60dp"
+                android:onClick="registerUser"
                 android:text="@string/Registrieren" />
+            <Button
+                android:id="@+id/back"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:onClick="switchLog"
+                android:text="Zurück" />
 
         </LinearLayout>
     </ScrollView>
