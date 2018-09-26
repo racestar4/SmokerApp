@@ -117,7 +117,7 @@ tools:context=".MainActivity">
                 android:id="@+id/reg"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:onClick="saveSettings"
+                android:onClick="registerUser"
                 android:text="@string/Registrieren" />
             <Button
                 android:id="@+id/back"

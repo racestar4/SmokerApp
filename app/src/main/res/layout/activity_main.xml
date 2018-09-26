@@ -57,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="89dp"
             android:text="@string/conifg"
-            android:onClick="config"
+            android:onClick=""
             />
 
         <Button
