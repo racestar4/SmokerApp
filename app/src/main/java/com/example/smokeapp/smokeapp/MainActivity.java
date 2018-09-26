@@ -100,7 +100,9 @@ public class  MainActivity extends AppCompatActivity {
             }
 
             Gson gson = new Gson();
-            new DataBaseConnection().execute("saveUserInformation",gson.toJson(user));
+            String send = gson.toJson(user);
+            System.out.println(send);
+            new DataBaseConnection().execute("saveUserInformation",send);
             loggedIn = true;
             setContentView(R.layout.activity_main);
         }
