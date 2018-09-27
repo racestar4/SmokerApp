@@ -1,5 +1,6 @@
 package com.example.smokeapp.smokeapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,18 +13,17 @@ import com.google.gson.*;
 
 public class  MainActivity extends AppCompatActivity {
 
-    User user;
-    JSONObject jsonObject;
+    static User user;
     public static String result ="";
+
 
     boolean loggedIn = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-// wenn user existiert auf main seite, wenn kein user existiert auf config seite.
-// ( Eindeutige unterscheidung nötig, Multiple User
-
+    // wenn user existiert auf main seite, wenn kein user existiert auf config seite.
+    // ( Eindeutige unterscheidung nötig, Multiple User
 
         if ( user == null) {
             user = new User();
@@ -31,23 +31,24 @@ public class  MainActivity extends AppCompatActivity {
         }else {
             setContentView(R.layout.activity_main);
         }
-
     }
 
     // On Click statistics
     public void statistics (View view){
         setContentView(R.layout.activity_statistics);
-     //   Toast.makeText(this, jsonObject.toString(), Toast.LENGTH_SHORT).show();
+        Intent stat = new Intent(this,StatisticsActivity.class);
+        startActivity(stat);
     }
+
     //On Click info
 
     public void info(View view){
+
         setContentView(R.layout.activity_info);
+        Intent inf = new Intent(this,InfoActivity.class);
+        startActivity(inf);
     }
-    //On Click config
-     public void config (View view) {
-        setContentView(R.layout.activity_config);
-     }
+
      /*public void back ( View view ){
         setContentView(R.layout.activity_main);
      }
@@ -95,37 +96,38 @@ public class  MainActivity extends AppCompatActivity {
                 System.out.println("database connection");
 
                 Gson gson = new Gson();
-                this.result = null;
+                result = null;
                 new DataBaseConnection().execute("userInformation", gson.toJson(user));
                 System.out.println("database connection succeded");
             }
 
-                while( this.result == null){
+                while( result == null){
                 System.out.println("waiting");
                 }
 
-            if ( this.result != null) {
                  String[]output = result.split("\\}");
                  output[1] = output[1].substring(2);
-                 this.result = output[1];
-            }
-                this.result = "{ "  + this.result + " }";
+                 result = output[1];
+
+                result = "{ "  + result + " }";
 
 
                         Gson gson = new Gson();
                         user.name="";
 
-                        user = gson.fromJson(this.result, User.class);
-                        System.out.println(this.result);
+                        user = gson.fromJson(result, User.class);
+                        System.out.println(result);
 
                        if ( user.size != 0){
                            loggedIn = true;
                            System.out.println(user.name+ " " + user.age+ " " +user.size+ " " +user.weight);
-                           fillUserInfo();
+
                            setContentView(R.layout.activity_main);
+                           Toast.makeText(this,"Hallo " + user.name, Toast.LENGTH_LONG).show();
+
 
                        }else{
-                           Toast.makeText(this,"Fehlerhafter Login", Toast.LENGTH_LONG);
+                           Toast.makeText(this,"Fehlerhafter Login", Toast.LENGTH_LONG).show();
                        }
 
 

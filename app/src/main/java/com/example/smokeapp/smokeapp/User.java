@@ -10,4 +10,7 @@ public class User {
     int size;
     int weight;
 
+    public User(){
+        name="";
+    }
 }
