@@ -51,15 +51,6 @@
             android:onClick="statistics"
             />
 
-
-        <Button
-            android:id="@+id/config"
-            android:layout_width="match_parent"
-            android:layout_height="89dp"
-            android:text="@string/conifg"
-            android:onClick=""
-            />
-
         <Button
             android:id="@+id/info"
             android:layout_width="match_parent"
@@ -67,5 +58,6 @@
             android:text="@string/info"
             android:onClick="info"
             />
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

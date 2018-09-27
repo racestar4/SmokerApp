@@ -45,7 +45,7 @@
             android:text="Tippe deinen Namen ein :" />
 
         <EditText
-            android:id="@+id/InputName"
+            android:id="@+id/LoginName"
             android:tooltipText="Tippe deinen Namen ein"
             android:layout_width="match_parent"
             android:layout_height="100dp"
@@ -63,7 +63,7 @@
             android:text="Tippe deinen Pin ein :" />
 
         <EditText
-            android:id="@+id/InputPin"
+            android:id="@+id/LoginPin"
             android:tooltipText="Tippe deinen Pin ein"
             android:layout_width="match_parent"
             android:layout_height="100dp"
@@ -79,7 +79,7 @@
             android:id="@+id/save"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:onClick="saveSettings"
+            android:onClick="login"
             android:text="@string/login" />
 
         <Button
