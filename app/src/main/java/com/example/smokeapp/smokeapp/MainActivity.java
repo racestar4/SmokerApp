@@ -35,7 +35,6 @@ public class  MainActivity extends AppCompatActivity {
 
     // On Click statistics
     public void statistics (View view){
-        setContentView(R.layout.activity_statistics);
         Intent stat = new Intent(this,StatisticsActivity.class);
         startActivity(stat);
     }
@@ -43,16 +42,9 @@ public class  MainActivity extends AppCompatActivity {
     //On Click info
 
     public void info(View view){
-
-        setContentView(R.layout.activity_info);
         Intent inf = new Intent(this,InfoActivity.class);
         startActivity(inf);
     }
-
-     /*public void back ( View view ){
-        setContentView(R.layout.activity_main);
-     }
-     */
 
      public void switchReg( View view ){
         setContentView(R.layout.activity_reg);
