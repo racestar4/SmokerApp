@@ -11,7 +11,7 @@
     android:minHeight="100dp"
     android:minWidth="100dp"
     android:visibility="visible"
-    tools:context=".MainActivity">
+    tools:context=".InfoActivity">
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
@@ -19,9 +19,11 @@
     android:layout_height="fill_parent"
     >
     <ListView
+
         android:id="@+id/list_viewasd"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+
         />
 </LinearLayout>
 </android.support.constraint.ConstraintLayout>
