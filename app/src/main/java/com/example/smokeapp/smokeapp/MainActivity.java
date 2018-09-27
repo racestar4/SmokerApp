@@ -46,10 +46,12 @@ public class  MainActivity extends AppCompatActivity {
         startActivity(inf);
     }
 
+    //Switch to Registrations Layout
      public void switchReg( View view ){
         setContentView(R.layout.activity_reg);
      }
 
+     //Android standart "back" Button is used in our App
         @Override
         public void onBackPressed() {
             if (loggedIn) {
@@ -58,24 +60,18 @@ public class  MainActivity extends AppCompatActivity {
                 setContentView(R.layout.activity_config);
             }
         }
+
+        //Send Database Request that "one zigarrete" was smoked should be saved
         public void smoked(View view){
         Toast.makeText(this,"Du raucher", Toast.LENGTH_SHORT).show();
         }
 
+        //switch to login Layout
         public void switchLog(View view){
         setContentView(R.layout.activity_config);
         }
 
-        public void fillUserInfo(){
-
-     //    TextView aname = (TextView) findViewById(R.id.AnzeigeName);
-            //   TextView aage = (TextView) findViewById(R.id.AnzeigeAlter);
-
-       //  aname.setText(user.name.toString());
-      //   aage.setText(Integer.toString(user.age));
-        }
-
-
+        // Login Method which creates a database connection to validate
         public void login(View view){
 
          System.out.println("login button clicked");
@@ -125,7 +121,7 @@ public class  MainActivity extends AppCompatActivity {
 
             }
 
-        // On Click register user settings
+        // On Click register user
         public void registerUser (View view){
 
             EditText tv1 =  findViewById(R.id.InputName);

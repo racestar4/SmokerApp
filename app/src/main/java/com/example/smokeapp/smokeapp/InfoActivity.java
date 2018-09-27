@@ -18,7 +18,6 @@ public class InfoActivity extends Activity {
             setContentView(R.layout.activity_info);
 
             lView = (ListView) findViewById(R.id.list_viewasd);
-            System.out.println("asdasdajajasfhasfhahskhasf");
             String[] functions = getResources().getStringArray(R.array.list_arrayasd);
 
             ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, functions);
