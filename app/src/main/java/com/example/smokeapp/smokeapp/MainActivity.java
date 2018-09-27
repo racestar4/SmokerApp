@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONObject;
@@ -13,7 +14,7 @@ public class  MainActivity extends AppCompatActivity {
 
     User user;
     JSONObject jsonObject;
-    static String result;
+    public static String result ="";
 
     boolean loggedIn = false;
     @Override
@@ -72,8 +73,65 @@ public class  MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_config);
         }
 
+        public void fillUserInfo(){
 
-        // On Click save user settings
+     //    TextView aname = (TextView) findViewById(R.id.AnzeigeName);
+            //   TextView aage = (TextView) findViewById(R.id.AnzeigeAlter);
+
+       //  aname.setText(user.name.toString());
+      //   aage.setText(Integer.toString(user.age));
+        }
+
+
+        public void login(View view){
+
+         System.out.println("login button clicked");
+         EditText name = findViewById(R.id.LoginName);
+         EditText pin = findViewById(R.id.LoginPin);
+
+            if ( !name.getText().toString().equals("") && !pin.getText().toString().equals("") ) {
+                user.name = name.getText().toString();
+                user.pin = Integer.parseInt(pin.getText().toString());
+                System.out.println("database connection");
+
+                Gson gson = new Gson();
+                this.result = null;
+                new DataBaseConnection().execute("userInformation", gson.toJson(user));
+                System.out.println("database connection succeded");
+            }
+
+                while( this.result == null){
+                System.out.println("waiting");
+                }
+
+            if ( this.result != null) {
+                 String[]output = result.split("\\}");
+                 output[1] = output[1].substring(2);
+                 this.result = output[1];
+            }
+                this.result = "{ "  + this.result + " }";
+
+
+                        Gson gson = new Gson();
+                        user.name="";
+
+                        user = gson.fromJson(this.result, User.class);
+                        System.out.println(this.result);
+
+                       if ( user.size != 0){
+                           loggedIn = true;
+                           System.out.println(user.name+ " " + user.age+ " " +user.size+ " " +user.weight);
+                           fillUserInfo();
+                           setContentView(R.layout.activity_main);
+
+                       }else{
+                           Toast.makeText(this,"Fehlerhafter Login", Toast.LENGTH_LONG);
+                       }
+
+
+            }
+
+        // On Click register user settings
         public void registerUser (View view){
 
             EditText tv1 =  findViewById(R.id.InputName);

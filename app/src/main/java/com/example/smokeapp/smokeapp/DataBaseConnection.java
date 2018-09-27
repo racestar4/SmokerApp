@@ -80,7 +80,11 @@ public class DataBaseConnection extends AsyncTask<String, Void, String> {
             sb.append(line);
         }
         System.out.println(sb.toString());
-        return sb.toString();
+
+        result = sb.toString();
+        MainActivity.result = result;
+        System.out.println(MainActivity.result);
+        return result;
     }
 
     @Override
@@ -95,6 +99,5 @@ public class DataBaseConnection extends AsyncTask<String, Void, String> {
     private boolean isBlank(String value){
         return value == null || value.trim().isEmpty();
     }
-
 
 }
