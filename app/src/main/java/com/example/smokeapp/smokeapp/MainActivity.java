@@ -1,6 +1,7 @@
 package com.example.smokeapp.smokeapp;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -15,13 +16,14 @@ public class  MainActivity extends AppCompatActivity {
 
     static User user;
     public static String result ="";
-
+    public MediaPlayer mp;
 
     boolean loggedIn = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        mp = MediaPlayer.create(this, R.raw.smoke);
     // wenn user existiert auf main seite, wenn kein user existiert auf config seite.
     // ( Eindeutige unterscheidung nötig, Multiple User
 
@@ -63,12 +65,15 @@ public class  MainActivity extends AppCompatActivity {
 
         //Send Database Request that "one zigarrete" was smoked should be saved
         public void smoked(View view){
+
+
         Toast.makeText(this,"Du raucher", Toast.LENGTH_SHORT).show();
         user.smokedCounter++;
 
         Gson gson = new Gson();
         String send = gson.toJson(user);
         new DataBaseConnection().execute("updateSmokedCounter",send);
+        mp.start();
         }
 
         //switch to login Layout
