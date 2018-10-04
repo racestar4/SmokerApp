@@ -64,6 +64,9 @@ public class  MainActivity extends AppCompatActivity {
         //Send Database Request that "one zigarrete" was smoked should be saved
         public void smoked(View view){
         Toast.makeText(this,"Du raucher", Toast.LENGTH_SHORT).show();
+         // In die DB eintragen, dass der User eine geraucht hat. Evtk mit timestamp?
+            // weitere funktionen wie, zähle alle Einträge der letzten 7 Tagen
+            //   new DataBaseConnection().execute("saveUserInformation",send);
         }
 
         //switch to login Layout

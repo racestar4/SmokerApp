@@ -9,6 +9,7 @@ public class User {
     int age;
     int size;
     int weight;
+    int smokedCounter;
 
     public User(){
         name="";
