@@ -23,7 +23,7 @@ public class  MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mp = MediaPlayer.create(this, R.raw.smoke);
+        mp = MediaPlayer.create(this, R.raw.smoked);
     // wenn user existiert auf main seite, wenn kein user existiert auf config seite.
     // ( Eindeutige unterscheidung nötig, Multiple User
 
