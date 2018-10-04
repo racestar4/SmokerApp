@@ -6,7 +6,7 @@
     android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/WhiteSmoke"
+    android:background="@color/CadetBlue"
     tools:context=".MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
@@ -70,7 +70,7 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     android:text="Hier soll dein Alter stehen"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.448"
@@ -119,6 +119,51 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.448"
                     app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textSmoked"
+                    android:layout_width="match_parent"
+                    android:layout_height="26dp"
+                    android:text="Anzahl geraucht  : "
+                    tools:layout_editor_absoluteX="71dp"
+                    tools:layout_editor_absoluteY="129dp" />
+
+                <TextView
+                    android:id="@+id/smokedCounter"
+                    android:layout_width="399dp"
+                    android:layout_height="36dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:text="Du stehen deine gerauchten Kippen"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.448"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textCosts"
+                    android:layout_width="match_parent"
+                    android:layout_height="26dp"
+                    android:text="Du hast so viel Geld ausgegeben : "
+                    tools:layout_editor_absoluteX="71dp"
+                    tools:layout_editor_absoluteY="129dp" />
+
+                <TextView
+                    android:id="@+id/costCounter"
+                    android:layout_width="399dp"
+                    android:layout_height="36dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:text="Hier steht dein ausgegebens Geld"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.448"
+                    app:layout_constraintStart_toStartOf="parent" />
+
 
             </LinearLayout>
         </LinearLayout>

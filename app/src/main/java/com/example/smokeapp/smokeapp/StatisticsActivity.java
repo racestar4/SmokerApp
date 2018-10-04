@@ -14,6 +14,9 @@ public class StatisticsActivity extends Activity {
     TextView aage;
     TextView aasize;
     TextView aweight;
+    TextView smoked;
+    TextView costs;
+
     User user;
 
     @Override
@@ -35,6 +38,11 @@ public class StatisticsActivity extends Activity {
          aweight = (TextView) findViewById(R.id.AnzeigeWeight);
          aweight.setText(Integer.toString(user.weight));
 
+        smoked = (TextView) findViewById(R.id.smokedCounter);
+        smoked.setText(Integer.toString(user.smokedCounter));
+
+        costs = (TextView) findViewById(R.id.costCounter);
+        costs.setText(Double.toString(user.smokedCounter * 0.3));
     }
 
 }

@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="list_arrayasd">
-        <item>Kosten: </item>
-        <item>Kohlendioxid: </item>
-        <item>Kohlenmonoxid: </item>
-        <item>Nikotin: </item>
-        <item>Acetaldehyd *: </item>
-        <item>Essigsäure: </item>
-        <item>Methylchlorid *: </item>
+        <item>Bestandteile einer Zigarette :</item>
+        <item>Kohlendioxid </item>
+        <item>Kohlenmonoxid </item>
+        <item>Nikotin </item>
+        <item>Acetaldehyd </item>
+        <item>Essigsäure </item>
+        <item>Methylchlorid </item>
         <item>Stickstoffmonoxid: </item>
         <item>Blausäure(Cyanwasserstoff): </item>
         <item>Ameisensäure: </item>
         <item>Katechol: </item>
-        <item>Hydrochinon *: </item>
-        <item>Aceton: </item>
-        <item>Toluol: </item>
-        <item>Acrolein *: </item>
-        <item>Phenol *: </item>
-        <item>Formaldehyd *: </item>
-        <item>Benzol *: </item>
-        <item>Pyridin: </item>
-        <item>Diethylnitrosamin *: </item>
-        <item>Dimethylnitrosamin *: </item>
-        <item>Staubpartikel (PAK-haltig *): </item>
-
+        <item>Hydrochinon</item>
+        <item>Aceton</item>
+        <item>Toluol</item>
+        <item>Acrolein</item>
+        <item>Phenol</item>
+        <item>Formaldehyd</item>
+        <item>Benzol</item>
+        <item>Pyridin</item>
+        <item>Diethylnitrosamin</item>
+        <item>Dimethylnitrosamin</item>
+        <item>Staubpartikel</item>
     </string-array>
 </resources>

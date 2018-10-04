@@ -13,5 +13,6 @@ public class User {
 
     public User(){
         name="";
+        smokedCounter=0;
     }
 }
